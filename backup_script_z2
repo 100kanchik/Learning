@@ -1,0 +1,15 @@
+
+#!/bin/bash
+# Создаенм не пустой файл
+echo "Hello Word">/tmp/file.txt
+# Копируем на вторую виртуальную машину
+rsync -avz /tmp/file.txt sadm2@X.X.X.X:/tmp
+# Количество дней
+day=7
+# Папка с файлом
+where_find="/tmp/"
+# Удаляем файлы старше 7 дней
+find $where_find -type f -mtime +$day -delete
+
+makeda nevazno, [09.03.21 17:04]
+[ Фотография ]
